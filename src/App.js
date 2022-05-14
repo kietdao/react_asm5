@@ -53,7 +53,6 @@ deleteTask = (inputIndex) => {
 }
 
 render() {
-  console.log('re-render')
   return (
     <div className="App">
         
