@@ -1,6 +1,12 @@
 import React, {Component} from 'react'
 
 export default class TaskItem extends Component {
+    shouldComponentUpdate(nextProps, nextState) {
+        if(this.props.data !== nextProps.data || this.props.index !== nextProps.index) {
+            return true
+        }
+        return false
+    }
     render() {
         return (
             <div className='task-item' key={this.props.index}>
