@@ -1,8 +1,11 @@
 .App {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +38,113 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+/* Form add task */
+.App .task-form {
+  width: 25%;
+  max-width: 100%;
+}
+
+.App .task-form h2 {
+
+}
+
+.App .task-form .form-group {
+  margin-bottom: 15px;
+}
+
+.App .task-form .form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.App .task-form .form-group input[type='text'], input[type='date'] {
+  width: 300px;
+  max-width: 100%;
+}
+
+.App .task-form .form-group .form-item input[type='radio'] {
+  
+}
+
+.App .task-form .form-group .form-item input[type='radio']::before {
+  content:'';
+  width: 12px;
+  height: 12px;
+  text-align: center;
+  border: 1px solid;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 100;
+}
+
+.App .task-form .form-group .form-item input[type='radio'].red::before {
+  background-color: #f8cecc;
+}
+
+.App .task-form .form-group .form-item input[type='radio'].yellow::before {
+  background-color: #fdf2cc;
+}
+
+.App .task-form .form-group .form-item input[type='radio'].green::before {
+  background-color: #d5e8d4;
+}
+
+.App .task-form .form-group .form-item input[type='radio']:checked::after {
+  content: '\2713';
+  width: 14px;
+  height: 14px;
+  font-size: 18px;
+  margin-top: -8px;
+  margin-left: 2px;
+  position: absolute;
+  z-index: 100;
+}
+
+.App .task-form .form-group .form-item {
+  width: 300px;
+  max-width: 100%;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.App .btn {
+  display: inline-block;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+/* Task list */
+.red {
+  background-color: #f8cecc;
+}
+
+.yellow {
+  background-color: #fdf2cc;
+}
+
+.green {
+  background-color: #d5e8d4;
+}
+
+.App .tasks-list {
+
+}
+
+.App .tasks-list .task-item {
+  display: flex;
+  align-items: center;
+}
+
+.App .tasks-list .task-item .task-stt {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.App .tasks-list .task-item .task-name {
+  margin-right: 8px;
 }
