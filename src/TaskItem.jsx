@@ -8,6 +8,7 @@ export default class TaskItem extends Component {
         return false
     }
     render() {
+        console.log(this.props.index)
         return (
             <div className='task-item' key={this.props.index}>
               <span className={this.props.data.priority === 'high' ? 'task-stt red': (this.props.data.priority === 'medium' ? 'task-stt yellow' : 'task-stt green')}></span>

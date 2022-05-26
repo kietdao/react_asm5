@@ -1,4 +1,4 @@
-.App {
+.App .ToDoApp {
   text-align: center;
   display: flex;
   align-items: center;
@@ -41,34 +41,34 @@
 } */
 
 /* Form add task */
-.App .task-form {
+.App .ToDoApp .task-form {
   width: 25%;
   max-width: 100%;
 }
 
-.App .task-form h2 {
+.App .ToDoApp .task-form h2 {
 
 }
 
-.App .task-form .form-group {
+.App .ToDoApp .task-form .form-group {
   margin-bottom: 15px;
 }
 
-.App .task-form .form-group label {
+.App .ToDoApp .task-form .form-group label {
   display: block;
   font-weight: bold;
 }
 
-.App .task-form .form-group input[type='text'], input[type='date'] {
+.App .ToDoApp .task-form .form-group input[type='text'], input[type='date'] {
   width: 300px;
   max-width: 100%;
 }
 
-.App .task-form .form-group .form-item input[type='radio'] {
+.App .ToDoApp .task-form .form-group .form-item input[type='radio'] {
   
 }
 
-.App .task-form .form-group .form-item input[type='radio']::before {
+.App .ToDoApp .task-form .form-group .form-item input[type='radio']::before {
   content:'';
   width: 12px;
   height: 12px;
@@ -79,19 +79,19 @@
   z-index: 100;
 }
 
-.App .task-form .form-group .form-item input[type='radio'].red::before {
+.App .ToDoApp .task-form .form-group .form-item input[type='radio'].red::before {
   background-color: #f8cecc;
 }
 
-.App .task-form .form-group .form-item input[type='radio'].yellow::before {
+.App .ToDoApp .task-form .form-group .form-item input[type='radio'].yellow::before {
   background-color: #fdf2cc;
 }
 
-.App .task-form .form-group .form-item input[type='radio'].green::before {
+.App .ToDoApp .task-form .form-group .form-item input[type='radio'].green::before {
   background-color: #d5e8d4;
 }
 
-.App .task-form .form-group .form-item input[type='radio']:checked::after {
+.App .ToDoApp .task-form .form-group .form-item input[type='radio']:checked::after {
   content: '\2713';
   width: 14px;
   height: 14px;
@@ -102,14 +102,14 @@
   z-index: 100;
 }
 
-.App .task-form .form-group .form-item {
+.App .ToDoApp .task-form .form-group .form-item {
   width: 300px;
   max-width: 100%;
   text-align: left;
   margin: 0 auto;
 }
 
-.App .btn {
+.App .ToDoApp .btn {
   display: inline-block;
   padding: 8px 12px;
   border: none;
@@ -129,22 +129,22 @@
   background-color: #d5e8d4;
 }
 
-.App .tasks-list {
+.App .ToDoApp .tasks-list {
 
 }
 
-.App .tasks-list .task-item {
+.App .ToDoApp .tasks-list .task-item {
   display: flex;
   align-items: center;
 }
 
-.App .tasks-list .task-item .task-stt {
+.App .ToDoApp .tasks-list .task-item .task-stt {
   width: 24px;
   height: 24px;
   border-radius: 50%;
   margin-right: 8px;
 }
 
-.App .tasks-list .task-item .task-name {
+.App .ToDoApp .tasks-list .task-item .task-name {
   margin-right: 8px;
 }

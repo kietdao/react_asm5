@@ -1,78 +1,55 @@
 import './App.css';
-import React, { Component } from 'react'
 
-import TaskForm from './TaskForm';
-import TaskItem from './TaskItem';
+import React, { Component } from 'react'
+import { Routes, Route } from 'react-router-dom'
+
+import ToDoApp from './ToDoApp';
+import Login from './Components/Login/Login'
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import AuthRoute from './Components/AuthRoute/AuthRoute';
+import NotFound from './Components/NotFound/NotFound';
+
 export default class App extends Component{
 
 constructor(props) {
   super(props)
   this.state = {
-    taskList: []
+    user: JSON.parse(sessionStorage.getItem('user'))
   }
 }
 
-handleTaskName = (e) => {
+getUser = (data) => {
   this.setState({
-    newTaskName: e.target.value
-  })
-}
-
-handleDeadLine = (e) => {
-  this.setState({
-    newDeadLine: e.target.value
-  })
-}
-
-handlePriority = (e) => {
-  this.setState({
-    newPriority: e.target.value
-  })
-}
-
-addNewTask = () => {
-  this.setState({
-    taskList: [
-      ...this.state.taskList,
-      {
-        'name': this.state.newTaskName,
-        'deadline': this.state.newDeadLine,
-        'priority': this.state.newPriority
-      }
-    ]
-  })
-}
-
-deleteTask = (inputIndex) => {
-  this.state.taskList.splice(inputIndex, 1)
-  this.setState({
-    taskList: [
-      ...this.state.taskList
-    ]
+    user: data
   })
 }
 
 render() {
+  const { user } = this.state
   return (
     <div className="App">
-        
-        <TaskForm 
-          handleTaskName = {this.handleTaskName}
-          handleDeadLine = {this.handleDeadLine}
-          handlePriority = {this.handlePriority}
-          addNewTask = {this.addNewTask}
-        />
-
-        <div className='tasks-list'>
-          <h2>List Task</h2>
-          {this.state.taskList.map((task, index) => {
-              return <TaskItem 
-                data = {task}
-                onDelete = {this.deleteTask}
-                index = {index}
+      <Routes>
+          <Route path='/' element={<Login 
+            getUser={this.getUser}
+          />} />
+          <Route exact path='/todo' element={
+            <PrivateRoute user={user}>
+              <button onClick={() => {
+                sessionStorage.setItem('user', null)
+                this.getUser(null)
+              }}>Log out</button>
+              <ToDoApp />
+            </PrivateRoute>     
+          }/>
+          <Route exact path='/login' element={
+            <AuthRoute user={user}>
+              <Login 
+                 getUser={this.getUser}
               />
-          })}
-        </div>
+            </AuthRoute>
+          }/>
+          <Route path='*' element={<NotFound />}/>
+      </Routes>
     </div>
   );
 }
