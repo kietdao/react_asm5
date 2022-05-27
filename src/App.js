@@ -8,46 +8,38 @@ import Login from './Components/Login/Login'
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import AuthRoute from './Components/AuthRoute/AuthRoute';
 import NotFound from './Components/NotFound/NotFound';
+import { checkToken } from './Components/Ultis/sesssion';
+import { Navigate } from 'react-router-dom'
 
 export default class App extends Component{
 
 constructor(props) {
   super(props)
-  this.state = {
-    user: JSON.parse(sessionStorage.getItem('user'))
-  }
-}
-
-getUser = (data) => {
-  this.setState({
-    user: data
-  })
 }
 
 render() {
-  const { user } = this.state
   return (
     <div className="App">
       <Routes>
-          <Route path='/' element={<Login 
-            getUser={this.getUser}
-          />} />
+          <Route path='/' element={
+            <Navigate to='/todo' replace/>
+          } />
+
           <Route exact path='/todo' element={
-            <PrivateRoute user={user}>
+            <PrivateRoute>
               <button onClick={() => {
-                sessionStorage.setItem('user', null)
-                this.getUser(null)
+                localStorage.setItem('isLogin', JSON.stringify(false))
               }}>Log out</button>
               <ToDoApp />
             </PrivateRoute>     
           }/>
+
           <Route exact path='/login' element={
-            <AuthRoute user={user}>
-              <Login 
-                 getUser={this.getUser}
-              />
+            <AuthRoute>
+              <Login />
             </AuthRoute>
           }/>
+
           <Route path='*' element={<NotFound />}/>
       </Routes>
     </div>

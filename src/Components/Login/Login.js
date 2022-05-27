@@ -2,7 +2,6 @@ import { React, useState, useEffect } from 'react'
 import './Login.css'
 import { useNavigate, Navigate } from 'react-router-dom'
 
-
 export default function Login(props) {
 
   const [username, setUserName] = useState('')
@@ -12,8 +11,9 @@ export default function Login(props) {
   
   const checkLogin = () => {
     if(username === userInfo.username && password === userInfo.password) {
-      sessionStorage.setItem('user', JSON.stringify({username, password}))
-      props.getUser(JSON.parse(sessionStorage.getItem('user')))
+      localStorage.setItem('user', JSON.stringify({username, password}))
+      localStorage.setItem('isLogin', JSON.stringify(true))
+      // props.getUser(JSON.parse(sessionStorage.getItem('user')))
       navigate('/todo')
     } 
   }
