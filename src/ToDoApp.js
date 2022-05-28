@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import TaskForm from './TaskForm';
-import TaskItem from './TaskItem';
+import TaskForm from './Components/taskform';
+import TaskList from './Components/tasklist';
 
 export default class ToDoApp extends Component {
     constructor(props) {
@@ -59,16 +59,10 @@ export default class ToDoApp extends Component {
                   addNewTask = {this.addNewTask}
                 />
     
-                <div className='tasks-list'>
-                  <h2>List Task</h2>
-                  {this.state.taskList.map((task, index) => {
-                      return <TaskItem 
-                        data = {task}
-                        onDelete = {this.deleteTask}
-                        index = {index}
-                      />
-                  })}
-                </div>
+                <TaskList 
+                  taskList = {this.state.taskList}
+                  onDelete = {this.deleteTask}
+                />
           </div>
         )
       }
