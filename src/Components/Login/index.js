@@ -21,12 +21,16 @@ export default function Login(props) {
  
   return (
     <div className='login-form'>
-      <label>User name:</label> 
-      <input type='text' name='username' placeholder='Enter your user name...' onBlur={(e) => setUserName(e.target.value)}/>
-      <label>Password:</label> 
-      <input type='password' name='password' placeholder='Enter your password...' onBlur={(e) => setPassword(e.target.value)}/>
-      <p>Don't have an account? <a onClick={() => navigate('/signup')}>Sign Up</a></p>
-      <button onClick={checkLogin}>Log in</button>
+      <div className='form-group'>
+        <label>User name</label> 
+        <input type='text' name='username' placeholder='Enter your user name...' onBlur={(e) => setUserName(e.target.value)}/>
+      </div>
+      <div className='form-group'>
+        <label>Password</label> 
+        <input type='password' name='password' placeholder='Enter your password...' onBlur={(e) => setPassword(e.target.value)}/>
+      </div>
+      <p className='form-note'>Don't have an account? <a onClick={() => navigate('/signup')}>Sign Up</a></p>
+      <button onClick={checkLogin} className='btn'>Log in</button>
     </div>
   )
 }

@@ -24,7 +24,7 @@ export default function App() {
           } />
           <Route exact path='/todo' element={
             <PrivateRoute>
-              <button onClick={() => {
+              <button className='btn' onClick={() => {
                 localStorage.setItem('isLogin', JSON.stringify(false))
                 navigate('/login')
               }}>Log out</button>

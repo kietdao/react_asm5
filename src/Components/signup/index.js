@@ -53,8 +53,8 @@ export default function SignUp() {
                   <div className='error-msg'>{errors.password}</div>
                 ) : null}
               </div>
-              <p>Have created an account? <a onClick={() => navigate('/login')}>Log In</a></p>
-              <button type='submit'>Sign Up</button>
+              <p className='form-note'>Have created an account? <a onClick={() => navigate('/login')}>Log In</a></p>
+              <button type='submit' className='btn'>Sign Up</button>
             </Form>
           )
         }}

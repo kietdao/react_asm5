@@ -14,9 +14,18 @@
 }
 
 .signup-form .form-group label {
-    display: inline;
+    font-weight: bold;
 }
 
 .signup-form .form-group .error-msg {
     color: red;
+}
+
+.signup-form .form-note a{
+    color: orange;
+    cursor: pointer;
+}
+
+.signup-form .form-note a:hover {
+    opacity: 0.8;
 }

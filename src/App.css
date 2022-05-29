@@ -41,6 +41,22 @@
 } */
 
 /* Form add task */
+.App .btn {
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    margin: 5px;
+    text-transform: uppercase;
+    background-color: orange;
+    color: #fff;
+    cursor: pointer;
+}
+
+.App .btn:hover {
+  opacity: .8;
+}
+
 .App .ToDoApp .task-form {
   width: 25%;
   max-width: 100%;
