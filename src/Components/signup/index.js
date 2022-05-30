@@ -4,8 +4,6 @@ import * as Yup from 'yup'
 import { useNavigate } from 'react-router-dom'
 import './signup.css'
 
-const userList = JSON.parse(localStorage.getItem('userList'))
-
 const SignupSchema = Yup.object().shape({
   username: Yup.string()
     .min(3, 'Too short!')
@@ -32,6 +30,7 @@ export default function SignUp() {
         validationSchema={SignupSchema}
 
         onSubmit={values => {
+          const userList = JSON.parse(localStorage.getItem('userList'))
           userList.push({username: values.username, password: values.password})
           localStorage.setItem('userList', JSON.stringify(userList))
         }}
