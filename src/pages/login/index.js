@@ -10,7 +10,7 @@ export default function Login(props) {
   const userList = JSON.parse(localStorage.getItem('userList'))
   const navigate = useNavigate()
 
-  const checkLogin = () => {
+  const onLogin = () => {
     userList.map(user => {
       if(username === user.username && password === user.password) {
         localStorage.setItem('isLogin', JSON.stringify(true))
@@ -30,7 +30,7 @@ export default function Login(props) {
         <input type='password' name='password' placeholder='Enter your password...' onBlur={(e) => setPassword(e.target.value)}/>
       </div>
       <p className='form-note'>Don't have an account? <a onClick={() => navigate('/signup')}>Sign Up</a></p>
-      <button onClick={checkLogin} className='btn'>Log in</button>
+      <button onClick={onLogin} className='btn'>Log in</button>
     </div>
   )
 }
