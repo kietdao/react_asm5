@@ -2,7 +2,7 @@ import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { useNavigate, Navigate } from 'react-router-dom'
 
-import ToDoApp from './ToDoApp';
+import ToDoApp from './pages/todoapp';
 import Login from './pages/login'
 import PrivateRoute from './Components/privateroute';
 import AuthRoute from './Components/authroute';

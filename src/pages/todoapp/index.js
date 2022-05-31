@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import TaskForm from './Components/taskform';
-import TaskList from './Components/tasklist';
+import TaskForm from './components/taskform';
+import TaskList from './components/tasklist';
 
 export default class ToDoApp extends Component {
     constructor(props) {
@@ -9,19 +9,19 @@ export default class ToDoApp extends Component {
           taskList: []
         }
       }
-      handleTaskName = (e) => {
+      handleTaskNameChange = (e) => {
         this.setState({
           newTaskName: e.target.value
         })
       }
       
-      handleDeadLine = (e) => {
+      handleDeadLineChange = (e) => {
         this.setState({
           newDeadLine: e.target.value
         })
       }
       
-      handlePriority = (e) => {
+      handlePriorityChange = (e) => {
         this.setState({
           newPriority: e.target.value
         })
@@ -53,9 +53,9 @@ export default class ToDoApp extends Component {
         return (
           <div className='ToDoApp'>
                 <TaskForm
-                  handleTaskName = {this.handleTaskName}
-                  handleDeadLine = {this.handleDeadLine}
-                  handlePriority = {this.handlePriority}
+                  handleTaskNameChange = {this.handleTaskNameChange}
+                  handleDeadLineChange = {this.handleDeadLineChange}
+                  handlePriorityChange = {this.handlePriorityChange}
                   addNewTask = {this.addNewTask}
                 />
     
