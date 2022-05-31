@@ -7,7 +7,7 @@ import Login from './pages/login'
 import PrivateRoute from './Components/privateroute';
 import AuthRoute from './Components/authroute';
 import NotFound from './Components/notfound';
-import SignUp from './Components/signup';
+import SignUp from './pages/signup';
 
 import './App.css';
 
